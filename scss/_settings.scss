@@ -1,0 +1,82 @@
+/* Fusion CMS Jelly Admin Theme
+For use with Fusion CMS v.5 */
+// Add percentage of white to a color
+
+// functions
+@function tint($color, $percent){
+  @return mix(white, $color, $percent);
+}
+ 
+// Add percentage of black to a color
+@function shade($color, $percent){
+  @return mix(black, $color, $percent);
+}
+// Color Variants
+// Primary
+.style-primary {
+	background-color: $primary;
+	color: $alt-color;
+}
+.style-primary-dark {
+	background-color: shade($primary, 20%);
+	color: $alt-color;
+}
+.style-primary-light {
+	background-color: tint($primary, 20%);
+	color: $alt-color;
+}
+.style-primary-bright {
+	background-color: tint($primary, 50%);
+	color: $color;
+}
+// Accent
+.style-accent {
+	background-color: $accent;
+	color: $alt-color;
+}
+.style-accent-dark {
+	background-color: shade($accent, 20%);
+	color: $alt-color;
+}
+.style-accent-light {
+ 	background-color: tint($accent, 20%);
+	color: $alt-color;
+}
+.style-accent-bright {
+	background-color: tint($accent, 50%);
+	color: $color;
+}
+// Menu
+.style-menu {
+	background-color: $menu;
+	color: $alt-color;
+}
+.style-menu-dark {
+	background-color: shade($menu, 20%);
+	color: $alt-color;
+}
+.style-menu-light {
+	background-color: tint($menu, 20%);
+	color: $alt-color;
+}
+.style-menu-bright {
+	background-color: tint($menu, 50%);
+	color: $alt-color;
+}
+// Background
+.style-background {
+	background-color: $background;
+	color: $color;
+}
+.style-background-dark {
+	background-color: shade($background, 20%);
+	color: $color;
+}
+.style-background-light {
+	background-color: tint($background, 20%);
+	color: $color;
+}
+.style-background-bright {
+	background-color: tint($background, 50%);
+	color: $color;
+}

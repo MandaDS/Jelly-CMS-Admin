@@ -1,0 +1,187 @@
+html {
+    font-size: 62.5%!important;// Set for golden REM font ratio
+}
+body {
+	background-color: lighten($background, 10%);
+	color: $color;
+	font-family: $font-family;
+	font-size: $base-font-size;
+	letter-spacing: .02em;
+	overflow-x: hidden;
+    position: relative;
+    left: 0;
+    -webkit-transition: all 0.3s ease;
+	   -moz-transition: all 0.3s ease;
+		    transition: all 0.3s ease;
+	&.push {
+		left: 300px;
+	}
+}
+
+// Headers
+h1 {
+	font-family: $font-family-alt;
+	font-size: 3em;
+}
+h2 {
+	font-family: $font-family-alt;
+	font-size: 2.25em;
+}
+h3 {
+	font-family: $font-family-alt;
+	font-size: 1.5em;
+}
+h4 {
+	font-family: $font-family-alt;
+	font-size: 1.3125em;
+}
+h5 {
+	font-family: $font-family-alt;
+	font-size: 1.125em;
+}
+h6 {
+	font-family: $font-family-alt;
+	margin-bottom: 1.5em;
+}
+
+// Links 
+a, a:link {
+	color: $link-color;
+	text-decoration: none;
+	transition: all 200ms linear;
+	&:hover, &:active, &:visited {
+		color: $link-color-hover;
+		text-decoration: none;
+	}
+}
+
+// Functionality
+.clearfix {
+  overflow: auto;
+  zoom: 1;
+}
+@-webkit-viewport   { width: device-width; }
+@-moz-viewport      { width: device-width; }
+@-ms-viewport       { width: device-width; }
+@-o-viewport        { width: device-width; }
+@viewport           { width: device-width; }
+
+/* --- Click animation effects --- */
+// general
+.cbutton {
+	position: relative;
+	display: inline-block;
+	margin: 1em;
+	padding: 0;
+	overflow: visible;
+	-webkit-transition: color 0.7s;
+		    transition: color 0.7s;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.cbutton.cbutton--click,
+.cbutton:focus {
+	outline: none;
+	color: $menu-bright;
+}
+.cbutton::after {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -35px 0 0 -35px;
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	content: '';
+	opacity: 0;
+	pointer-events: none;
+}
+
+// Boris Effect
+.cbutton--effect-boris::after {
+	background: rgba(111,148,182,0.1);
+}
+.cbutton--effect-boris.cbutton--click::after {
+	-webkit-animation: anim-effect-boris 0.3s forwards;
+	animation: anim-effect-boris 0.3s forwards;
+}
+@-webkit-keyframes anim-effect-boris {
+	0% {
+		-webkit-transform: scale3d(0.3, 0.3, 1);
+		transform: scale3d(0.3, 0.3, 1);
+	}
+	25%, 50% {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+		-webkit-transform: scale3d(1.2, 1.2, 1);
+		transform: scale3d(1.2, 1.2, 1);
+	}
+}
+@keyframes anim-effect-boris {
+	0% {
+		-webkit-transform: scale3d(0.3, 0.3, 1);
+		transform: scale3d(0.3, 0.3, 1);
+	}
+	25%, 50% {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+		-webkit-transform: scale3d(1.2, 1.2, 1);
+		transform: scale3d(1.2, 1.2, 1);
+	}
+}
+
+// Tamara Effect
+.cbutton--effect-tamara::after {
+	box-shadow: 0 0 0 3px rgba($background-bright,0.05);
+}
+.cbutton--effect-tamara.cbutton--click::after {
+	-webkit-animation: anim-effect-tamara 0.5s ease-out forwards;
+	animation: anim-effect-tamara 0.5s ease-out forwards;
+}
+@-webkit-keyframes anim-effect-tamara {
+	0% {
+		box-shadow: 0 0 0 3px rgba($background-bright,0.3);
+		opacity: 1;
+		-webkit-transform: scale3d(0.6, 0.6, 1);
+		transform: scale3d(0.6, 0.6, 1);
+	}
+	100% {
+		box-shadow: 0 0 0 100px rgba($background-bright,0);
+		opacity: 0;
+		-webkit-transform: scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1);
+	}
+}
+@keyframes anim-effect-tamara {
+	0% {
+		box-shadow: 0 0 0 3px rgba($background-bright,0.3);
+		opacity: 1;
+		-webkit-transform: scale3d(0.6, 0.6, 1);
+		transform: scale3d(0.6, 0.6, 1);
+	}
+	100% {
+		box-shadow: 0 0 0 100px rgba($background-bright,0);
+		opacity: 0;
+		-webkit-transform: scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1);
+	}
+}
+
+
+// For style settings preview
+#styles {
+	section {
+		width: 80%;
+		margin: 30px auto;
+		div {
+			display: block;
+			min-height: 100px;
+			width: 100%;
+			padding: 30px;
+		}
+	}
+}

@@ -1,0 +1,13 @@
+%nospace {
+	margin: 0;
+	padding: 0;
+}
+%clearlist {
+	padding-left: 0;
+	li {
+		background-image: none;
+		list-style-image: none;
+		list-style-type: none;
+		padding-left: none;
+	}
+}

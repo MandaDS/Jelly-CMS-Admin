@@ -1,0 +1,82 @@
+/* Fusion CMS Jelly Admin Theme
+For use with Fusion CMS v.5 */
+
+/*-- Main Color Variables --*/
+// Color Functions
+@function tint($color, $percent){
+  @return mix(white, $color, $percent);
+}
+@function shade($color, $percent){
+  @return mix(black, $color, $percent);
+}
+
+// defaults
+$primary: #1398c4; //blue
+$accent: #f05a2b; //orange
+$menu: #171729; //dark purple
+$background: #eceff5; //gray-blue
+
+//  State Colors 
+$info: #00c7da;
+$success: #8bc34a;
+$warning: #fec80d;
+$danger: #f24c5f;
+
+// Varients
+$primary-dark: shade($primary, 20%);
+$primary-light: tint($primary, 20%);
+$primary-bright: tint($primary, 50%);
+
+$accent-dark: shade($accent, 20%);
+$accent-light: tint($accent, 20%);
+$accent-bright: tint($accent, 50%);
+
+$menu-dark: shade($menu, 20%);
+$menu-light: tint($menu, 20%);
+$menu-bright: tint($menu, 50%);
+
+$background-dark: shade($background, 20%);
+$background-light: tint($background, 20%);
+$background-bright: tint($background, 50%);
+
+/*-- Typography Variables --*/
+// Colors
+$color: $menu;
+$color-light: lighten($menu, 30%);
+$color-dark: darken($menu, 30%);
+$alt-color: $background;
+$alt-color-light: lighten($background, 30%);
+$alt-color-dark: darken($background, 30%);
+
+// Fonts
+$font-family: 'Lato', sans-serif;
+$font-family-alt: 'Ubuntu', sans-serif;
+
+// Sizes
+$base-font-size: 16px;
+
+// Headers
+
+// Links
+$link-color: $menu-light;
+$link-color-hover: $menu-bright;
+
+/*-- Button Variables --*/
+/*-- List Variables --*/
+/*-- Tab Variables --*/
+/*-- Accordion Variables --*/
+/*-- Icon Variables -- */
+
+/*-- Responsive Sizing --*/
+
+// Desktop size
+$screen-lg: 1200px;
+// Tablet size
+$screen-md: 992px;
+$screen-md-max: $screen-lg - 1;
+// Mobile-landscape to Small Tablet size
+$screen-sm: 768px;
+$screen-sm-max: $screen-md - 1;
+// Mobile size
+$screen-xs: 480px;
+$screen-xs-max: $screen-sm - 1;
